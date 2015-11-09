@@ -8,6 +8,7 @@ var dbHelper = require('build/WebSqlHelper');<br>
 dbHelper.openDatabase();<br>
 	 
 //Select <br>
+```javascript
 dbHelper.select('LOGS', '*', {<br>
 		"id": 2<br>
 	}, function(message) {<br>
