@@ -1,4 +1,4 @@
-
+Version 1.0
 Example:
 //require
 //If surport es6 require('src/WebSqlHelper');
