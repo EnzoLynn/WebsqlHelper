@@ -1,14 +1,14 @@
 WebSqlHelper Version 1.0
 ==== 
 Example:<br>  
-//require<br>
-//If surport es6 require('src/WebSqlHelper');<br>
-var dbHelper = require('build/WebSqlHelper');<br>  
+```javascript
+//require 
+//If surport es6 require('src/WebSqlHelper'); 
+var dbHelper = require('build/WebSqlHelper'); 
 //Open Database<br>
 dbHelper.openDatabase();<br>
 	 
 //Select <br>
-```javascript
 dbHelper.select('LOGS', '*', {<br>
 		"id": 2<br>
 	}, function(message) {<br>
