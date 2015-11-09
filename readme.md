@@ -1,8 +1,9 @@
-Version 1.0
-Example:
+WebSqlHelper Version 1.0
+==== 
+Example:<br>  
 //require
 //If surport es6 require('src/WebSqlHelper');
-var dbHelper = require('build/WebSqlHelper');
+var dbHelper = require('build/WebSqlHelper');<br>  
 //Open Database
 dbHelper.openDatabase();
 	 
