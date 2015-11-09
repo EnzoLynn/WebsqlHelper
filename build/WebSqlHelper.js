@@ -74,7 +74,7 @@ define(function (require, exports, module) {
    * @param  {[type]} opts [description]
    * databaseName,version,description,size
    * @return {[type]}      [description]
-   * @example dbHelper.openDatabase();
+   * @example dbHelper.openDatabase({});
    */
 		openDatabase: (function (_openDatabase) {
 			function openDatabase(_x) {
@@ -322,6 +322,29 @@ define(function (require, exports, module) {
 			};
 
 			me.executeSql(sql, params, function (tx, result) {
+				if (typeof callback == 'function') {
+					callback(new message({
+						success: true,
+						msg: 'ok',
+						result: result
+					}));
+				}
+				return true;
+			}, function (tx, errmsg) {
+				if (typeof callback == 'function') {
+					callback(new message({
+						success: false,
+						msg: errmsg,
+						result: null
+					}));
+				}
+				return false;
+			});
+		},
+		dropTable: function dropTable(tableName, callback) {
+			var me = this;
+			var sql = "drop table IF EXISTS " + tableName;
+			me.executeSql(sql, [], function (tx, result) {
 				if (typeof callback == 'function') {
 					callback(new message({
 						success: true,

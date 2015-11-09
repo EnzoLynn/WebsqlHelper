@@ -6,7 +6,7 @@ WebSqlHelper Version 1.0
 //If surport es6 require('src/WebSqlHelper'); 
 var dbHelper = require('build/WebSqlHelper'); 
 //Open Database 
-dbHelper.openDatabase(); 
+dbHelper.openDatabase({}); //options
 //Select 
 dbHelper.select('LOGS', '*', { 
 		"id": 2
@@ -35,4 +35,8 @@ dbHelper.insert('LOGS',{
 		log:(new Date()).getTime()
 	},function(message){
 		console.log(message);
+});
+//Drop table
+dbHelper.dropTable('test', function(message) {
+	console.log(message);		 
 });
