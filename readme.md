@@ -1,6 +1,6 @@
 WebSqlHelper Version 1.0
 ==== 
-#Example:  <br>
+###Example:  <br>
 ```javascript
 //require 
 //If surport es6 require('src/WebSqlHelper'); 
