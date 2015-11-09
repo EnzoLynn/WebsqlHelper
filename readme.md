@@ -1,39 +1,38 @@
 WebSqlHelper Version 1.0
 ==== 
-Example:<br>  
+#Example:  <br>
 ```javascript
 //require 
 //If surport es6 require('src/WebSqlHelper'); 
 var dbHelper = require('build/WebSqlHelper'); 
-//Open Database<br>
-dbHelper.openDatabase();<br>
-	 
-//Select <br>
-dbHelper.select('LOGS', '*', {<br>
-		"id": 2<br>
-	}, function(message) {<br>
-		console.log(message);<br>
-		if (message.success) {<br>
-			for (var i = 0; i < message.result.rows.length; i++) {<br>
-				console.log(message.result.rows[i]);<br>
-			};<br>
-		};<br>
-});<br>
-//Update<br>
-dbHelper.update('LOGS',{log:'update'},{<br>
-		id:2<br>
-	}, function(message) {<br>
-		console.log(message);	<br>	 
-});<br>
-//Delete<br>
-dbHelper.delete('LOGS',{"id": 1});<br>
-	dbHelper.createTable('test',{id:"integer primary key autoincrement",name:"not null"},function(message){<br>
-		 console.log(message);<br>
-});<br>
-//Insert<br>
-dbHelper.insert('LOGS',{<br>
-		id:3,<br>
-		log:(new Date()).getTime()<br>
-	},function(message){<br>
-		console.log(message);<br>
-});<br>
+//Open Database 
+dbHelper.openDatabase(); 
+//Select 
+dbHelper.select('LOGS', '*', { 
+		"id": 2
+	}, function(message) {
+		console.log(message);
+		if (message.success) {
+			for (var i = 0; i < message.result.rows.length; i++) {
+				console.log(message.result.rows[i]);
+			};
+		};
+});
+//Update
+dbHelper.update('LOGS',{log:'update'},{
+		id:2
+	}, function(message) {
+		console.log(message);		 
+});
+//Delete
+dbHelper.delete('LOGS',{"id": 1});
+	dbHelper.createTable('test',{id:"integer primary key autoincrement",name:"not null"},function(message){
+		 console.log(message);
+});
+//Insert
+dbHelper.insert('LOGS',{
+		id:3,
+		log:(new Date()).getTime()
+	},function(message){
+		console.log(message);
+});
